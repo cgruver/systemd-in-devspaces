@@ -24,6 +24,7 @@ components:
         securityContext:
           runAsUser: 1000
           fsGroup: 0
+          runAsNonRoot: false
     container-overrides: 
       securityContext:
         capabilities:
