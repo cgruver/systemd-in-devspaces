@@ -22,8 +22,9 @@ components:
       spec:
         hostUsers: false
         securityContext:
-          runAsUser: 1000
+          runAsUser: 0
           fsGroup: 0
+          runAsNonRoot: false
     container-overrides: 
       securityContext:
         capabilities:
@@ -39,7 +40,7 @@ components:
         fsGroup: 0
         procMount: Unmasked
   container: 
-    image: quay.io/cgruver0/che/ocp-4-20-userns:latest
+    image: nexus.clg.lab:5002/dev-spaces/systemd-test:latest
     memoryLimit: 8Gi
     cpuLimit: "2"
     env:
