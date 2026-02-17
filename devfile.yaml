@@ -22,7 +22,8 @@ components:
       spec:
         hostUsers: false
         securityContext:
-          runAsUser: 1000
+          runAsUser: 0
+          fsGroup: 0
     container-overrides: 
       securityContext:
         capabilities:
