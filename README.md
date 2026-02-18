@@ -160,7 +160,13 @@ EOF
 ## Run a container with systemd
 
 ```bash
-podman --cgroup-manager cgroupfs run -it --rm --systemd=true --cgroup-parent=/containers --name=systemd registry.access.redhat.com/ubi10-init:10.1
+podman run -d --name=systemd registry.access.redhat.com/ubi10-init:10.1
 ```
 
+## Build and run a container that enables Nginx with systemd
 
+```bash
+podman build -t systemd:nginx ./systemd-test-image
+
+podman run -d -p 8080:80 systemd:nginx
+```
