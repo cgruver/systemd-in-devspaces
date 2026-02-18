@@ -1,5 +1,7 @@
 # Experimental project for enabling systemd containers in OpenShift Dev Spaces
 
+__Note:__ The manifests for creating the container image used in this workspace are located in the `root-workspace-image` directory.
+
 ## Apply the following MachineConfig to enable RW cgroups
 
 ```bash
