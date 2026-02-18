@@ -94,6 +94,24 @@ EOF
 
 ```bash
 cat << EOF | oc apply -f -
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: dev-workspace-run-as-root
+  labels:
+    app.kubernetes.io/part-of: che.eclipse.org
+subjects:
+  - kind: ServiceAccount
+    name: devspaces-operator
+    namespace: openshift-operators
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: dev-workspace-run-as-root
+EOF
+
+```bash
+cat << EOF | oc apply -f -
 apiVersion: v1                      
 kind: Namespace                 
 metadata:
@@ -109,6 +127,8 @@ spec:
     cheServer:      
       debug: false
       logLevel: INFO
+      clusterRoles:
+      - dev-workspace-run-as-root
     metrics:                
       enable: true
     pluginRegistry:
