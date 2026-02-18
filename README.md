@@ -168,5 +168,5 @@ podman run -d --name=systemd registry.access.redhat.com/ubi10-init:10.1
 ```bash
 podman build -t systemd:nginx ./systemd-test-image
 
-podman run -d -p 8080:80 systemd:nginx
+podman run -d -p 8080:80 --name=nginx systemd:nginx
 ```
