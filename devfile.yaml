@@ -14,7 +14,7 @@ projects:
 components:
 - name: dev-tools
   container: 
-    image: quay.io/cgruver0/che/devspaces-run-as-root:latest
+    image: quay.io/cgruver0/che/devspaces-systemd:latest
     memoryLimit: 8Gi
     cpuLimit: "2"
     env:
