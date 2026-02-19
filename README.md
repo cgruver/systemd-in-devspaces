@@ -43,7 +43,7 @@ cat << EOF | oc apply -f -
 apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
-  name: nested-podman-scc
+  name: nested-podman-systemd
 priority: null
 allowPrivilegeEscalation: true
 allowedCapabilities:
@@ -123,7 +123,7 @@ spec:
     disableContainerRunCapabilities: false
     security:
     containerRunConfiguration:
-      openShiftSecurityContextConstraint: nested-podman-run-as-root
+      openShiftSecurityContextConstraint: nested-podman-systemd
       containerSecurityContext:
         allowPrivilegeEscalation: true
         procMount: Unmasked
