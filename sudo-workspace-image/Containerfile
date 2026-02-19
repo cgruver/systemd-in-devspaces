@@ -21,11 +21,8 @@ RUN microdnf --disableplugin=subscription-manager install -y procps-ng openssl g
     echo "user:x:1000:" >> /etc/group ; \
     chmod 600 /etc/shadow ; \
     echo "user:*:0:0:99999:7:::" >> /etc/shadow ; \
-    # groupadd -g 1000 user ; \
-    # useradd -g user -u 1000 -d ${HOME} -s /bin/bash user ; \
     echo "user:1001:64535" >> /etc/subuid ; \
     echo "user:1001:64535" >> /etc/subgid ; \
-    # usermod --append --groups root user ; \
     setcap cap_setuid+ep /usr/bin/newuidmap ; \
     setcap cap_setgid+ep /usr/bin/newgidmap ; \
     echo "user ALL=NOPASSWD: /set-cgroups.sh" >> /etc/sudoers

@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
-mkdir /sys/fs/cgroup/outer
 mkdir /sys/fs/cgroup/inner
 echo 1 > /sys/fs/cgroup/inner/cgroup.procs
 echo 2 > /sys/fs/cgroup/inner/cgroup.procs
