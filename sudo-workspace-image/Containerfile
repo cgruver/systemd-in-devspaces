@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi10-minimal
 
-ENV HOME=/home/user
+ENV HOME=/projects/home
 ENV BUILDAH_ISOLATION=chroot
 
 USER 0
