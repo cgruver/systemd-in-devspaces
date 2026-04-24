@@ -3,6 +3,9 @@
 		{
 			"name": "systemd-in-devspaces",
 			"path": "/projects/systemd-in-devspaces"
+		},
+		{
+			"path": "../ansible-dev-tools"
 		}
 	],
 	"extensions": {
